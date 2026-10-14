@@ -20,10 +20,16 @@
     </style>
   </head>
   <body>
-    <iframe
+    <!-- <iframe
       src="https://script.google.com/macros/s/AKfycbwbbVPhSAV-_8FGQsWbr1XQKjg9LhKYLgQZVBnXA45MnOvW-WS7UiiibWYCXGKJJb52/exec"
       allow="fullscreen"
       allowfullscreen>
-    </iframe>
+    </iframe> -->
+    <iframe id="app" allow="fullscreen" allowfullscreen></iframe>
+      <script>
+        var base = "https://script.google.com/macros/s/AKfycbwbbVPhSAV-_8FGQsWbr1XQKjg9LhKYLgQZVBnXA45MnOvW-WS7UiiibWYCXGKJJb52/exec";
+        var mode = new URLSearchParams(location.search).get('mode');
+        document.getElementById('app').src = base + (mode === 'remote' ? '?mode=remote' : '');
+      </script>
   </body>
 </html>
